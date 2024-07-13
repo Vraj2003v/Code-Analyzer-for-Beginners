@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Analyzer - Syntax Error</title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/736x/3c/8c/0a/3c8c0a7ffd3e0dd67f1b8749a7ac2861.jpg');
+            background-size: cover;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .error-message {
+            background-color: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff6347;
+        }
+
+        p {
+            color: #ffffff;
+        }
+
+        a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-message">
+        <h1>Syntax Error</h1>
+        <p>{{ error_message }}</p>
+        <p><a href="/">Go back to the homepage</a></p>
+    </div>
+</body>
+</html>

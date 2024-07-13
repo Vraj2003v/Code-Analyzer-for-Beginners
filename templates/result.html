@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Analyzer - Result</title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/736x/3c/8c/0a/3c8c0a7ffd3e0dd67f1b8749a7ac2861.jpg');
+            background-size: cover;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .code-analyzer {
+            background-color: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        table {
+            background-color: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            color: #ffffff;
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #00bcd4;
+        }
+
+        th {
+            background-color: #00bcd4;
+        }
+
+        tr:nth-child(even) {
+            background-color: #444444;
+        }
+
+        .highlighted-code {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #2d2d2d;
+        }
+
+        .token-highlight {
+            color: #ff6347;  /* Change this color as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="code-analyzer">
+        <h1>Code Analyzer - Result</h1>
+        <div class="highlighted-code">
+            {{ highlighted_code | safe }}
+        </div>
+        <table>
+            <tr>
+                <th>Token</th>
+                <th>Explanation</th>
+            </tr>
+            {% for token, explanation in token_explanations.items() %}
+            <tr>
+                <td><span class="{{ token_classes[token] }}">{{ token }}</span></td>
+                <td>{{ explanation }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% if output %}
+        <div class="output">
+            <h2>Output:</h2>
+            <pre>{{ output }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

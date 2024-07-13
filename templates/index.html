@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Analyzer</title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/736x/3c/8c/0a/3c8c0a7ffd3e0dd67f1b8749a7ac2861.jpg');
+            background-size: cover;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #00bcd4;
+            text-align: center;
+        }
+
+        form {
+            background-color: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 80%;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        label {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        select, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #00bcd4;
+            border-radius: 5px;
+            background-color: #444444;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0097a7;
+        }
+    </style>
+</head>
+<body>
+    <form action="/analyze" method="post">
+        <h1>Code Analyzer</h1>
+        <label for="language">Select Language:</label>
+        <select id="language" name="language">
+            <option value="c">C</option>
+            <option value="c++">C++</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+        </select>
+        <br>
+        <label for="code">Enter Code:</label><br>
+        <textarea id="code" name="code" rows="10" cols="50"></textarea><br>
+        <label for="user_inputs">Enter User Inputs (if any):</label><br>
+        <textarea id="user_inputs" name="user_inputs" rows="3" cols="50"></textarea><br>
+        <input type="submit" value="Analyze">
+    </form>
+</body>
+</html>
